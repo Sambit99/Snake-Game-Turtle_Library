@@ -59,15 +59,18 @@ while game_is_on:
     
     if snake.head.xcor() > (BORDER_WIDTH//2)-20 or snake.head.xcor() < -(BORDER_WIDTH//2)+20 or snake.head.ycor() > (BORDER_HEIGHT//2)-30 or snake.head.ycor() < -(BORDER_HEIGHT//2)+20:
         game_is_on = False
+        score_board.reset()
         score_board.game_over()
-        print(snake.head.position())
+        # print(snake.head.position())
     
     for segments in snake.snakes:
         if segments == snake.head:
             continue
         elif snake.head.distance(segments)<=10:
             game_is_on = False
+            score_board.reset()
             score_board.game_over()
+
 
     
 

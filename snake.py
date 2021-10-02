@@ -35,6 +35,11 @@ class Snake():
     def extend(self):
         self.add_snakes(self.snakes[-1].position())
     
+    def reset(self):
+        self.snakes.clear()
+        self.create_snakes()
+        self.head = self.snakes[0]
+    
     def move(self):
         '''This function moves the snake by a pre-defined size as defined in STEP_SIZE '''
         # i = len(self.snakes)-1
